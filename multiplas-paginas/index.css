@@ -146,20 +146,18 @@ nav button:hover span:after {
   font-weight: 500;
 }
 
-/* Container do banner */
 .banner {
   width: 100%;
-  margin-top: 90px; /* distância da navbar (se ela for fixa) */
+  margin-top: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Imagem dentro do banner */
 .banner img {
-  max-width: 100%;   /* ocupa no máximo a largura da tela */
-  height: auto;      /* mantém proporção sem distorcer */
-  display: block;    /* tira espaços embaixo da imagem */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .mais-assistidos, .em-cartaz, .proximas-estreias, .podemos-ajudar{

@@ -181,3 +181,124 @@ footer img {
   height: 18px;
   object-fit: contain;
 }
+
+h1{
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+}
+
+.cabecalho{
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.cabecalho h1{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.unidade{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.unidade select {
+  padding: 4px 6px; /* bem compacto */
+}
+
+.exibir{
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.exibir:hover{
+  background-color: #3e5363;
+  color: white;
+}
+
+.data{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.data input[type="date"] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Output', sans-serif;
+}
+
+.filmes{
+  padding-left: 30px;
+}
+
+.filme1, .filme2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.filmes img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.filmes .texto {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.filmes .texto h2 {
+  margin: 0 0 10px 0;
+}
+
+.horarios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.horario {
+  background-color: #3e5363;
+  color: whitesmoke;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.horario:hover {
+  background-color: #db4a1e;
+  color: white;
+}
+
+.classificacao {
+  width: 40px;       /* ou outro tamanho desejado */
+  height: auto;      /* mantém proporção da imagem */
+  object-fit: contain; /* evita distorção */
+  vertical-align: middle; /* alinha melhor com texto, se necessário */
+}
