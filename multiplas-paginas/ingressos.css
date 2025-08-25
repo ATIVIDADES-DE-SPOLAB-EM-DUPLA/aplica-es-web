@@ -249,7 +249,7 @@ h1{
   padding-left: 30px;
 }
 
-.filme1, .filme2 {
+.filme1, .filme2, .filme3, .filme4, .filme5 {
   display: flex;
   align-items: flex-start;
   gap: 20px;
@@ -296,9 +296,15 @@ h1{
   color: white;
 }
 
-.classificacao {
-  width: 40px;       /* ou outro tamanho desejado */
-  height: auto;      /* mantém proporção da imagem */
-  object-fit: contain; /* evita distorção */
-  vertical-align: middle; /* alinha melhor com texto, se necessário */
+.filmes .texto p {
+  display: flex;
+  align-items: center;
+  gap: 2.3em;
+  margin: 0;
+}
+
+.filmes .texto p .classificacao {
+  height: 1.2em;
+  width: auto;
+  gap: 2px;
 }
