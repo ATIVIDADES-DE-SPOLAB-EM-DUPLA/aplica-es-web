@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ingressos.css') }}">
+    <title>Ingressos</title>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li>
+            <div class="nav-item">
+                <img src="{{ url_for('static', filename='img/Luvi Ingressos.png') }}" class="logo">
+            </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                <img src="{{ url_for('static', filename='img/ingresso (1).png') }}">
+                <a href="ingressos.html"><span>Ingressos</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                <img src="{{ url_for('static', filename='img/cinema.png') }}">
+                <span>Cinemas</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                <img src="{{ url_for('static', filename='img/jornal.png') }}">
+                <span>Notícias</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="search-container">
+                    <input type="text" placeholder="Digite aqui...">
+                    <button type="submit">Pesquisar</button>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <span>Olá, user!</span>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <center><h1>Sessões</h1><br></center>
+
+    <div class="cabecalho">
+        <h3>Exibindo sessões para:</h3>
+        <form class="unidade">
+            <label for="cinema">Unidade</label>
+            <select id="selec-unidade" name="unidade" required>
+                <option value="Santo Amaro">Santo Amaro</option>
+                <option value="Tucuruvi">Tucuruvi</option>
+                <option value="Vila Sônia">Vila Sônia</option>
+                <option value="Itaquera">Itaquera</option>
+                <option value="pinheiros">Pinheiros</option>
+            </select>
+            <button class="exibir">Exibir</button>
+        </form>
+
+        <form class="data">
+            <h3>Selecione a data:</h3>
+            <label for="data">
+                <input type="date">
+            </label>
+        </form>
+    </div><br><br>
+
+    <div class="filmes">
+        <div class="filme1">
+            <div class="imagem">
+                <img src="{{ url_for('static', filename='img/filme1.jpg') }}">
+            </div>
+            <div class="texto">
+                <h2>A Hora do Mal</h2><br>
+                <p>
+                    <span class="duracao-classificacao">
+                        111 min
+                    <img class="classificacao" src="{{ url_for('static', filename='img/18.png') }}">
+                    </span>
+                </p>
+                <h3>Dublado</h3>
+                <div class="horarios">
+                    <span class="horario">16:00</span>
+                    <span class="horario">17:30</span>
+                    <span class="horario">18:00</span>
+                    <span class="horario">19:00</span>
+                    <span class="horario">20:30</span>
+                </div><br>
+                <h3>XD</h3>
+                <div class="horarios">
+                    <span class="horario">18:00</span>
+                    <span class="horario">19:00</span>
+                    <span class="horario">20:00</span>
+                </div>
+            </div>
+        </div><br><br><br><br><br><br>
+
+        <div class="filme2">
+            <div class="imagem">
+                <img src="{{ url_for('static', filename='img/filme2.webp') }}">
+            </div>
+            <div class="texto">
+                <h2>Uma Sexta-Feira Mais Louca Ainda</h2><br>
+                <p>
+                    <span class="duracao-classificacao">
+                        111 min
+                    <img class="classificacao" src="{{ url_for('static', filename='img/13.png') }}">
+                    </span>
+                </p>
+                <h3>Dublado</h3>
+            <div class="horarios">
+                <span class="horario">13:15</span>
+                <span class="horario">14:00</span>
+                <span class="horario">14:45</span>
+                <span class="horario">16:00</span>
+                <span class="horario">17:15</span>
+                <span class="horario">18:00</span>
+            </div><br>
+            <h3>Legendado</h3>
+            <div class="horarios">
+                <span class="horario">16:00</span>
+                <span class="horario">18:00</span>
+                <span class="horario">20:30</span>
+            </div>
+            </div>
+        </div><br><br><br><br><br><br>
+
+        <div class="filme3">
+            <div class="imagem">
+                <img src="{{ url_for('static', filename='img/filme3.webp') }}">
+            </div>
+            <div class="texto">
+                <h2>Amores Materialistas</h2><br>
+                <p>
+                    <span class="duracao-classificacao">
+                        117 min
+                    <img class="classificacao" src="{{ url_for('static', filename='img/15.png') }}">
+                    </span>
+                </p>
+                <h3>Dublado</h3>
+            <div class="horarios">
+                <span class="horario">13:15</span>
+                <span class="horario">14:00</span>
+                <span class="horario">14:45</span>
+                <span class="horario">16:00</span>
+                <span class="horario">17:15</span>
+                <span class="horario">18:00</span>
+            </div><br>
+            <h3>Legendado</h3>
+            <div class="horarios">
+                <span class="horario">16:00</span>
+                <span class="horario">18:00</span>
+                <span class="horario">20:30</span>
+            </div>
+            </div>
+        </div><br><br><br><br><br><br>
+
+        <div class="filme4">
+            <div class="imagem">
+                <img src="{{ url_for('static', filename='img/filme4.jpeg') }}">
+            </div>
+            <div class="texto">
+                <h2>Juntos</h2><br>
+                <p>
+                    <span class="duracao-classificacao">
+                        102 min
+                    <img class="classificacao" src="{{ url_for('static', filename='img/16.png') }}">
+                    </span>
+                </p>
+                <h3>Dublado</h3>
+            <div class="horarios">
+                <span class="horario">13:15</span>
+                <span class="horario">14:00</span>
+                <span class="horario">14:45</span>
+                <span class="horario">16:00</span>
+                <span class="horario">17:15</span>
+                <span class="horario">18:00</span>
+            </div><br>
+            <h3>Legendado</h3>
+            <div class="horarios">
+                <span class="horario">16:00</span>
+                <span class="horario">18:00</span>
+                <span class="horario">20:30</span>
+            </div>
+            </div>
+        </div><br><br><br><br><br><br>
+
+        <div class="filme5">
+            <div class="imagem">
+                <img src="{{ url_for('static', filename='img/filme5.jpg') }}">
+            </div>
+            <div class="texto">
+                <h2>Os Caras Malvados 2</h2><br>
+                <p>
+                    <span class="duracao-classificacao">
+                        104 min
+                    <img class="classificacao" src="{{ url_for('static', filename='img/13.png') }}">
+        
+                </p>
+                <h3>Dublado</h3>
+            <div class="horarios">
+                <span class="horario">13:15</span>
+                <span class="horario">14:00</span>
+                <span class="horario">14:45</span>
+                <span class="horario">16:00</span>
+                <span class="horario">17:15</span>
+                <span class="horario">18:00</span>
+            </div><br>
+            <h3>Legendado</h3>
+            <div class="horarios">
+                <span class="horario">16:00</span>
+                <span class="horario">18:00</span>
+                <span class="horario">20:30</span>
+            </div>
+            </div>
+        </div>
+    </div><br><br><br><br><br><br>
+
+    <div class="footer">
+        <footer>
+            <div class="coluna1">
+                <h3>Institucional</h3>
+                <ul>
+                    <li>Quem somos</li>
+                    <li>Sobre a empresa</li>
+                    <li>Faça parte da empresa</li>
+                </ul>
+            </div>
+
+            <div class="coluna2">
+                <h3>Políticas</h3>
+                <ul>
+                    <li>Privacidade e Segurança</li>
+                    <li>Meia-Entrada</li>
+                    <li>Cancelamentos e Trocas</li>
+                    <li>Termos de Uso</li>
+                </ul>
+            </div>
+
+            <div class="coluna3">
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li><img src="{{ url_for('static', filename='img/insta.png') }}">Instagram</li>
+                    <li><img src="{{ url_for('static', filename='img/youtube.png') }}">Youtube</li>
+                    <li><img src="{{ url_for('static', filename='img/facebook.png') }}">Facebook</li>
+                </ul>
+            </div>
+
+            <div class="coluna4">
+                <h3>Precisa de ajuda?</h3>
+                <ul>
+                    <li>Atendimento</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
