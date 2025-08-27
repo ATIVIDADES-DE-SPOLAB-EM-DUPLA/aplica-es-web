@@ -11,28 +11,28 @@
         <ul>
             <li>
             <div class="nav-item">
-                <img src="{{ url_for('static', filename='img/Luvi Ingressos.png') }}" class="logo">
+                <a href="/"><img src="{{ url_for('static', filename='img/Luvi Ingressos.png') }}" class="logo"></a>
             </div>
             </li>
 
             <li>
                 <div class="nav-item">
                 <img src="{{ url_for('static', filename='img/ingresso (1).png') }}">
-                <a href="ingressos.html"><span>Ingressos</span></a>
+                <a href="ingressos"><span>Ingressos</span></a>
                 </div>
             </li>
 
             <li>
                 <div class="nav-item">
                 <img src="{{ url_for('static', filename='img/cinema.png') }}">
-                <span>Cinemas</span>
+                <a href="cinemas"><span>Cinemas</span></a>
                 </div>
             </li>
 
             <li>
                 <div class="nav-item">
                 <img src="{{ url_for('static', filename='img/jornal.png') }}">
-                <span>Notícias</span>
+                <a href="noticias"><span>Notícias</span></a>
                 </div>
             </li>
 
@@ -45,16 +45,17 @@
 
             <li>
                 <div class="nav-item">
-                    <span>Olá, user!</span>
+                    <a href="login"><span>Login</span></a>
                 </div>
             </li>
         </ul>
     </nav>
 
-    <center><h1>Sessões</h1><br></center>
-
     <div class="cabecalho">
-        <h3>Exibindo sessões para:</h3>
+        <div class="titulo">
+            <h1>Sessões</h1>
+            <p class="textocabecalho">Confira as sessões de acordo com a unidade</p>
+        </div>
         <form class="unidade">
             <label for="cinema">Unidade</label>
             <select id="selec-unidade" name="unidade" required>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/noticias.css') }}">
+    <title>Notícias</title>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li>
+            <div class="nav-item">
+                <a href="/"><img src="{{ url_for('static', filename='img/Luvi Ingressos.png') }}" class="logo"></a>
+            </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                <img src="{{ url_for('static', filename='img/ingresso (1).png') }}">
+                <a href="ingressos"><span>Ingressos</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                <img src="{{ url_for('static', filename='img/cinema.png') }}">
+                <a href="cinemas"><span>Cinemas</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                <img src="{{ url_for('static', filename='img/jornal.png') }}">
+                <a href="noticias"><span>Notícias</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="search-container">
+                    <input type="text" placeholder="Digite aqui...">
+                    <button type="submit">Pesquisar</button>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <a href="login"><span>Login</span></a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="cabecalho">
+        <h1>Notícias</h1>
+        <p class="textocabecalho">Fique por dentro das grandes novidades do cinema!</p>
+    </div>
+
+    <div class="noticias">
+        <div class="noticia1">
+            <img src="{{ url_for('static', filename='img/guerreiras.webp') }}">
+            <h3>Guerreiras do K-Pop se torna filme mais assistido da Netflix</h3><br>
+            <p class="texto">A animação atingiu a incrível de marca de 236 milhões de visualizações</p>
+        </div>
+
+        <div class="noticia2">
+            <img src="{{ url_for('static', filename='img/noah.jpg') }}">
+            <h3>Noah Centineo revela novo físico para viver Ken no live-action de Street Fighter</h3>
+            <p class="texto">Ator exibiu transformação em foto publicada nas redes sociais</p>
+        </div>
+
+        <div class="noticia3">
+            <img src="{{ url_for('static', filename='img/fale.webp') }}">
+            <h3>Fale Comigo 2 | Diretores trabalham em sequência e mais projetos com a A24</h3>
+            <p class="texto">Danny e Michael Phillipou ainda não revelaram a trama da continuação</p>
+        </div>
+
+        <div class="noticia4">
+            <iframe src="https://www.youtube.com/embed/E2xtmPkuksA" title="HAMNET - Official Teaser Trailer [HD] - Only in Theaters Thanksgiving" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3>Hamnet | Filme ganha novo trailer; assista</h3>
+            <p class="texto">O aguardado longa é dirigido por Chloé Zhao e estrelado por Paul Mescal</p>
+        </div>
+
+        <div class="noticia5">
+            <img src="{{ url_for('static', filename='img/jogos.webp') }}">
+            <h3>Jogos Mortais | James Wan revela como deseja revitalizar a franquia</h3>
+            <p class="texto">Cineasta que começou a saga fala sobre o futuro da mesma</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <div class="coluna1">
+                <h3>Institucional</h3>
+                <ul>
+                    <li>Quem somos</li>
+                    <li>Sobre a empresa</li>
+                    <li>Faça parte da empresa</li>
+                </ul>
+            </div>
+
+            <div class="coluna2">
+                <h3>Políticas</h3>
+                <ul>
+                    <li>Privacidade e Segurança</li>
+                    <li>Meia-Entrada</li>
+                    <li>Cancelamentos e Trocas</li>
+                    <li>Termos de Uso</li>
+                </ul>
+            </div>
+
+            <div class="coluna3">
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li><img src="{{ url_for('static', filename='img/insta.png') }}">Instagram</li>
+                    <li><img src="{{ url_for('static', filename='img/youtube.png') }}">Youtube</li>
+                    <li><img src="{{ url_for('static', filename='img/facebook.png') }}">Facebook</li>
+                </ul>
+            </div>
+
+            <div class="coluna4">
+                <h3>Precisa de ajuda?</h3>
+                <ul>
+                    <li>Atendimento</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    </div>
+</body>
+</html>

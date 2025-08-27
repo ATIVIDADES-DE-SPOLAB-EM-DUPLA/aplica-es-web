@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/multiplas-paginas/static/css/cinemas.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cinemas.css') }}">
     <title>Cinemas</title>
 </head>
 <body>
@@ -11,28 +11,28 @@
         <ul>
             <li>
             <div class="nav-item">
-                <a href="index.html"><img src="img/Luvi Ingressos.png" class="logo"></a>
+                <a href="/"><img src="{{ url_for('static', filename='img/Luvi Ingressos.png') }}" class="logo"></a>
             </div>
             </li>
 
             <li>
                 <div class="nav-item">
-                <img src="img/ingresso (1).png">
-                <span>Ingressos</span>
+                <img src="{{ url_for('static', filename='img/ingresso (1).png') }}">
+                <a href="ingressos"><span>Ingressos</span></a>
                 </div>
             </li>
 
             <li>
                 <div class="nav-item">
-                <img src="img/cinema.png">
-                <span>Cinemas</span>
+                <img src="{{ url_for('static', filename='img/cinema.png') }}">
+                <a href="cinemas"><span>Cinemas</span></a>
                 </div>
             </li>
 
             <li>
                 <div class="nav-item">
-                <img src="img/jornal.png">
-                <span>Notícias</span>
+                <img src="{{ url_for('static', filename='img/jornal.png') }}">
+                <a href="noticias"><span>Notícias</span></a>
                 </div>
             </li>
 
@@ -45,25 +45,54 @@
 
             <li>
                 <div class="nav-item">
-                    <span>Olá, user!</span>
+                    <a href="login"><span>Login</span></a>
                 </div>
             </li>
         </ul>
     </nav>
 
     <div class="cabecalho">
-        <h3>Exibindo sessões para:</h3>
-        <form class="unidade">
-            <label for="cinema">Unidade</label>
-            <select id="selec-unidade" name="unidade" required>
-                <option value="Santo Amaro">Santo Amaro</option>
-                <option value="Tucuruvi">Tucuruvi</option>
-                <option value="Vila Sônia">Vila Sônia</option>
-                <option value="Itaquera">Itaquera</option>
-                <option value="pinheiros">Pinheiros</option>
-            </select>
-            <button class="exibir">Exibir</button>
-        </form>
+        <h1>Cinemas</h1>
+
+        <p class="textocabecalho">Veja a localização dos cinemas parceiros da nossa empresa!</p>
+    </div>
+
+    
+    <div class="unidades">
+        <div class="unidade1">
+            <h3>Unidade Itaquera</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.7839267023337!2d-46.468748100000006!3d-23.5402727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce66da7ee9a12b%3A0x458b8cc6cbc69983!2sCin%C3%A9polis%20Metr%C3%B4%20Itaquera!5e0!3m2!1spt-BR!2sbr!4v1756235766720!5m2!1spt-BR!2sbr"
+                 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                <p class="endereco">Av. José Pinheiro Borges, 390 - Cidade Antônio Estêvão de Carvalho, São Paulo - SP, 08220-900</p>
+        </div>
+
+        <div class="unidade2">
+            <h3>Unidade Pinheiros</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29256.843573199556!2d-46.725403293954734!3d-23.564656055762665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57096c930267%3A0x93a1219293a014f6!2sCinema%20Cinemark%20(shopping%20Eldorado)!5e0!3m2!1spt-BR!2sbr!4v1756238645575!5m2!1spt-BR!2sbr"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="endereco">Av. Rebouças, 3970 - lj 410 - Pinheiros, São Paulo - SP, 05402-600</p>
+        </div>
+
+        <div class="unidade3">
+            <h3>Unidade Santo Amaro</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.627062579387!2d-46.710654600000005!3d-23.6535233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce51aaef4cf3e1%3A0xa3eb1f37f0ebd4ad!2sCinepolis!5e0!3m2!1spt-BR!2sbr!4v1756239011006!5m2!1spt-BR!2sbr"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="endereco">R. Amador Bueno, 229 - Santo Amaro, São Paulo - SP, 04752-005</p>
+        </div>
+
+        <div class="unidade4">
+            <h3>Unidade Tucuruvi</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.4399756953294!2d-46.60318470000001!3d-23.480656999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef66d52088179%3A0xce3cedba8a244548!2sCinema%20Cinemark%20Shopping%20Tucuruvi!5e0!3m2!1spt-BR!2sbr!4v1756239083556!5m2!1spt-BR!2sbr"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="endereco">Av. Dr. Antônio Maria Laet, 566 - Parada Inglesa, São Paulo - SP, 02240-000</p>
+        </div>
+
+        <div class="unidade5">
+            <h3>Unidade Tatuapé</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.819302610279!2d-46.575872600000004!3d-23.539000699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ec325a1282d%3A0xb752ef7895e83093!2sCinema%20Cinemark!5e0!3m2!1spt-BR!2sbr!4v1756239323729!5m2!1spt-BR!2sbr"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="endereco">Rua Gonçalves Crespo, 78 S/N, Lojas 420/421 - Tatuapé, São Paulo, 03066-030</p>
+        </div>
     </div>
     
     <footer class="footer">
@@ -89,9 +118,9 @@
             <div class="coluna3">
                 <h3>Redes Sociais</h3>
                 <ul>
-                    <li><img src="img/insta.png">Instagram</li>
-                    <li><img src="img/youtube.png">Youtube</li>
-                    <li><img src="img/facebook.png">Facebook</li>
+                    <li><img src="{{ url_for('static', filename='img/insta.png') }}">Instagram</li>
+                    <li><img src="{{ url_for('static', filename='img/youtube.png') }}">Youtube</li>
+                    <li><img src="{{ url_for('static', filename='img/facebook.png') }}">Facebook</li>
                 </ul>
             </div>
 

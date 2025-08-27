@@ -42,15 +42,6 @@ nav li {
   padding: 0 10px; 
 }
 
-nav a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: normal;
-  font-size: inherit;
-  padding: 0;
-  margin: 0;
-}
-
 .nav .logo {
     height: 60px;
     width: auto;
@@ -80,6 +71,15 @@ nav input[type=text] {
   background-position: 10px 10px; 
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
 }
 
 nav button {
@@ -155,112 +155,89 @@ nav button:hover span:after {
   font-weight: 500;
 }
 
-.banner {
-  width: 100%;
-  margin-top: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cabecalho{
+  font-family: "Outfit", sans-serif;
 }
 
-.banner img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.mais-assistidos, .em-cartaz, .proximas-estreias, .podemos-ajudar{
-    margin-top: 60px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 20px 0;
-    font-family: "Outfit", sans-serif;
-}
-
-.mais-assistidos h1, .em-cartaz h1, .proximas-estreias h1, .podemos-ajudar h1 {
+.cabecalho h1, .cabecalho p{
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.mais-assistidos > div,
-.em-cartaz > div,
-.proximas-estreias > div,
-.podemos-ajudar > div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 190px;
+.localização{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.mais-assistidos img, .em-cartaz img, .proximas-estreias img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+.noticias {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 30px;
 }
 
-.em-cartaz .setaesquerda,
-.em-cartaz .setadireita,
-.proximas-estreias .setaesquerda,
-.proximas-estreias .setadireita {
-    width: 50px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.noticia1,
+.noticia2,
+.noticia3,
+.noticia4,
+.noticia5 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  align-items: flex-start;
 }
 
-.em-cartaz .setaesquerda img .setadireita img {
-    width: 100%;
-    height: auto;
+.noticia1 img,
+.noticia2 img,
+.noticia3 img,
+.noticia5 img,
+.noticia4 iframe {
+  flex: 1 1 250px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-.proximas-estreias .setaesquerda img .setadireita img{
-    width: 100%;
-    height: auto;
+.noticia1 h3,
+.noticia2 h3,
+.noticia3 h3,
+.noticia4 h3,
+.noticia5 h3,
+.noticia1 .texto,
+.noticia2 .texto,
+.noticia3 .texto,
+.noticia4 .texto,
+.noticia5 .texto {
+  flex: 2 1 400px;
+  font-family: 'Outfit', sans-serif;
 }
 
-.data-estreia{
-    border: solid 1px transparent;
-    border-radius: 10px;
-    width: 65%;
-    height: auto;
-    background-color: #d87152;
+.noticia1 h3,
+.noticia2 h3,
+.noticia3 h3,
+.noticia4 h3,
+.noticia5 h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
 }
 
-.podemos-ajudar{
-    color: white;
-    background-color: #3e5363;
-    height: auto;
-    font-family: 'Outfit', sans-serif;
-}
-
-.perfil, .ingressos, .promocoes, .outro{
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.perfil:hover,
-.ingressos:hover,
-.promocoes:hover,
-.outro:hover{
-  background-color: black;
-  color: white;
+.noticia1 .texto,
+.noticia2 .texto,
+.noticia3 .texto,
+.noticia4 .texto,
+.noticia5 .texto {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 footer {
