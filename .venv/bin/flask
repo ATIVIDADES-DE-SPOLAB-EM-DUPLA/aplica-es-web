@@ -1,4 +1,4 @@
-#!/home/estudante1/aplica-es-web/.venv/bin/python
+#!/home/estudante2/aplica-es-web/.venv/bin/python
 import sys
 from flask.cli import main
 if __name__ == '__main__':

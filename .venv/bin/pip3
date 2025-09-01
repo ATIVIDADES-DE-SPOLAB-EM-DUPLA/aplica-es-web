@@ -1,4 +1,4 @@
-#!/home/estudante1/aplica-es-web/.venv/bin/python
+#!/home/estudante2/aplica-es-web/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

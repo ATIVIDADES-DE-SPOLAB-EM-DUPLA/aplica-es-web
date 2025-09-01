@@ -68,8 +68,8 @@
 
                 {% for filme in lista_filmes %}
                     <tr>
+                        <td>{{ filme.classificação }}</td>
                         <td>{{ filme.título }}</td>
-                        <td>{{ filme.nota }}</td>
 
                         {% if filme.nota >= 7.0 %}
                             <td class="nota alta">{{ filme.nota }}</td>
