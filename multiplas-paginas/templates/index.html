@@ -43,11 +43,17 @@
                 </div>
             </li>
 
-            <li>
+             <li>
                 <div class="nav-item">
-                    <a href="login"><span>Login</span></a>
+                    {% if logado and usuario %}
+                        <span class="welcome-text">Olá, <strong>{{ usuario }}</strong>!</span>
+                        <a href="/logout"><span>Sair</span></a>
+                    {% else %}
+                        <a href="login"><span>Login</span></a>
+                    {% endif %}
                 </div>
             </li>
+
         </ul>
     </nav>
 
