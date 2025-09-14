@@ -17,14 +17,12 @@ body {
     padding-top: 90px;
 }
 
-/* Container principal */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Navegação */
 nav {
     background-color: black;
     width: 100%;
@@ -170,15 +168,87 @@ nav button:hover span:after {
     font-weight: 500;
 }
 
+.principal {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
 h1 {
     text-align: center;
+    margin-bottom: 30px;
     font-family: 'Outfit', sans-serif;
-    font-size: 2.5rem;
-    margin: 30px 0 15px;
+    font-size: 2.2rem;
     color: #1a1a1a;
 }
 
-/* Botão de carregar - centralizado e com bordas arredondadas */
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    width: 220px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.1rem;
+    font-family: 'Outfit', sans-serif;
+    color: #2c3e50;
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.nota {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1.1rem;
+}
+
 .botao-carregar-container {
     text-align: center;
     margin: 30px 0;
@@ -188,14 +258,13 @@ h1 {
     background-color: #3e5363;
     color: whitesmoke;
     border: none;
-    border-radius: 25px; /* Bordas mais arredondadas */
+    border-radius: 25px;
     padding: 12px 24px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
     display: inline-block;
     font-size: 16px;
-    box-shadow: none; /* Sem sombra */
 }
 
 #carregar-btn:hover {
@@ -240,7 +309,6 @@ footer img {
     object-fit: contain;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -258,6 +326,18 @@ footer img {
         justify-content: center;
         margin-top: 10px;
     }
+    
+    .dashboard-cards {
+        gap: 15px;
+    }
+    
+    .card {
+        width: 180px;
+    }
+    
+    .image-container {
+        height: 250px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -270,5 +350,20 @@ footer img {
     #carregar-btn {
         padding: 10px 20px;
         font-size: 14px;
+    }
+    
+    /* Responsividade para cards */
+    .dashboard-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .image-container {
+        height: 350px;
     }
 }

@@ -43,22 +43,24 @@
                 </div>
             </li>
 
-            <li>
+             <li>
                 <div class="nav-item">
-                    <span>Olá, user!</span>
+                    {% if logado and usuario %}
+                        <span class="welcome-text">Olá, <strong>{{ usuario }}</strong>!</span>
+                        <a href="/logout"><span>Sair</span></a>
+                    {% else %}
+                        <a href="{{ url_for('validar_login') }}"><span>Login</span></a>
+                    {% endif %}
                 </div>
             </li>
         </ul>
     </nav>
 
-    <h1>Ranking de Filmes (Renderizado no Cliente)</h1>
-
-    <div class="botao-carregar-container">
-        <button id="carregar-btn">Carregar Filmes</button>
+    <h1>Filmes em Cartaz (e as notas)</h1>
+    <div id="dashboard" class="dashboard-cards">
+        
     </div>
 
-    <div id="conteudo"></div>
-    
     <footer>
         <div class="coluna1">
             <h3>Institucional</h3>
@@ -95,5 +97,8 @@
             </ul>
         </div>
     </footer>
+
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

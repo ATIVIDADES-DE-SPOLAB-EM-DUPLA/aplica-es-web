@@ -17,14 +17,12 @@ body {
     padding-top: 90px;
 }
 
-/* Container principal */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Navegação */
 nav {
     background-color: black;
     width: 100%;
@@ -170,7 +168,6 @@ nav button:hover span:after {
     font-weight: 500;
 }
 
-/* Cabeçalho */
 h1 {
     text-align: center;
     font-family: 'Outfit', sans-serif;
@@ -189,7 +186,6 @@ h1 {
     color: #555;
 }
 
-/* Tabela */
 .tabela {
     width: 100%;
     overflow-x: auto;
@@ -274,14 +270,13 @@ table {
     margin-right: 10px;
 }
 
-/* Estilização das notas */
 .nota.alta {
-    color: #2ecc71; /* Verde para notas altas */
+    color: #2ecc71; 
     font-weight: bold;
 }
 
 .nota.baixa {
-    color: #e67e22; /* Laranja para notas baixas */
+    color: #e67e22;
     font-weight: bold;
 }
 
@@ -294,13 +289,11 @@ table {
     font-weight: 600;
 }
 
-/* Efeitos de hover */
 .linha:hover {
     background-color: #f9f9f9;
     transition: background-color 0.3s ease;
 }
 
-/* Footer */
 footer {
     background-color: black;
     color: white;
@@ -337,7 +330,6 @@ footer img {
     object-fit: contain;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;

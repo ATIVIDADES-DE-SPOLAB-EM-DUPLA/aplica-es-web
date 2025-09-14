@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "titulo": "A Hora do Mal",
+    "poster": "filme1.jpg",
+    "genero": "Terror",
+    "nota": 7.1,
+    "lancamento": "25-08-2025"
+  },
+  {
+    "id": 2,
+    "titulo": "Os Caras Malvados 2",
+    "poster": "filme5.jpg",
+    "genero": "Animação",
+    "nota": 7.1,
+    "lancamento": "12-09-2025"
+  },
+  {
+    "id": 3,
+    "titulo": "Uma Sexta-Feira Mais Louca Ainda",
+    "poster": "filme2.webp",
+    "genero": "Comédia",
+    "nota": 7.0,
+    "lancamento": "20-08-2025"
+  },
+  {
+    "id": 4,
+    "titulo": "Juntos",
+    "genero": "Terror",
+    "poster": "filme4.jpeg",
+    "nota": 6.9,
+    "lancamento": "05-08-2025"
+  },
+  {
+    "id": 5,
+    "titulo": "Amores Materialistas",
+    "genero": "Romance",
+    "poster": "filme3.webp",
+    "nota": "6.4",
+    "lancamento": "30-07-2025"
+  }
+]
