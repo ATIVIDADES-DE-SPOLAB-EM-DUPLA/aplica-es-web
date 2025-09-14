@@ -1,28 +1,18 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 
 app = Flask(__name__)
-
-app.secret_key = 'ChaveSupersecreta'
+app.secret_key = "ChaveSuperSecreta"
 
 users = [
-    {'email': 'levi@gmail.com', 'password': '123', 'name': 'levi'}
+    {"name": "Levi", "email": "levi@gmail.com", "password": "123"}
 ]
 
 @app.route('/')
 def pagina_inicial():
-    return render_template('index.html', logado=session.get('logado', False), usuario=session.get('user_name', None))
+    logado = session.get('logado', False)
+    usuario = session.get('user_name')
 
-@app.route('/ingressos')
-def ingressos():
-    return render_template('ingressos.html', logado=session.get('logado', False), usuario=session.get('user_name', None))
-
-@app.route('/cinemas')
-def cinemas():
-    return render_template('cinemas.html', logado=session.get('logado', False), usuario=session.get('user_name', None))
-
-@app.route('/noticias')
-def noticias():
-    return render_template('noticias.html', logado=session.get('logado', False), usuario=session.get('user_name', None))
+    return render_template('duvidas.html', logado=logado, usuario=usuario)
 
 @app.route('/login', methods=['GET', 'POST'])
 def validar_login():
@@ -71,7 +61,6 @@ def logout():
     session.clear()
     flash("Você foi desconectado com sucesso!", "sucesso")
     return redirect(url_for('pagina_inicial'))
-
 
 if __name__ == '__main__':
     app.run(debug=True)

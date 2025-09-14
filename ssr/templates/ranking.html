@@ -45,7 +45,12 @@
 
             <li>
                 <div class="nav-item">
-                    <span>Olá, user!</span>
+                    {% if logado and usuario %}
+                        <span class="welcome-text">Olá, <strong>{{ usuario }}</strong>!</span>
+                        <a href="/logout"><span>Sair</span></a>
+                    {% else %}
+                        <a href="{{ url_for('validar_login') }}"><span>Login</span></a>
+                    {% endif %}
                 </div>
             </li>
         </ul>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/duvidas.css') }}">
+    <title>Sobre Nós - Luvi Ingressos</title>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li>
+                <div class="nav-item">
+                    <img src="{{ url_for('static', filename='img/Luvi Ingressos.png') }}" class="logo" alt="Luvi Ingressos">
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <img src="{{ url_for('static', filename='img/ingresso (1).png') }}" alt="Ingressos">
+                    <a href="ingressos"><span>Ingressos</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <img src="{{ url_for('static', filename='img/cinema.png') }}" alt="Cinemas">
+                    <a href="cinemas"><span>Cinemas</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <img src="{{ url_for('static', filename='img/jornal.png') }}" alt="Notícias">
+                    <a href="noticias"><span>Notícias</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="search-container">
+                    <input type="text" placeholder="Digite aqui...">
+                    <button type="submit">Pesquisar</button>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    {% if logado and usuario %}
+                        <span class="welcome-text">Olá, <strong>{{ usuario }}</strong>!</span>
+                        <a href="/logout"><span>Sair</span></a>
+                    {% else %}
+                        <a href="login"><span>Login</span></a>
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="conteudo-principal">
+        <h1 class="titulo-principal">Sobre nós</h1>
+        <h2 class="subtitulo">Descubra um pouco mais sobre a Luvi Ingressos abaixo!</h2>
+
+        <div class="topicos-container">
+            <div class="topico">
+                <h2>Nossa História</h2>
+                <button class="botao-detalhes" type="button">Detalhes</button>
+                <div class="resposta">
+                    <p class="texto-resposta">
+                        A Luvi Ingressos surgiu como um projeto escolar durante o ensino médio, porém começamos
+                        a pensar: e se ele se tornasse real? A partir daí, começamos alugando um espaço pequeno,
+                        com apenas duas salas de cinema que alternavam filmes clássicos toda semana, já que não
+                        tínhamos investimento para comprar os direitos de exibição. Até que um día, o empresário
+                        Agostinho visitou nosso cinema e adorou, assinando um contrato de investimento. Hoje em
+                        dia, temos diversas unidades espalhadas por São Paulo, e buscamos evoluir para ocuparmos
+                        o Brasil inteiro, passando a arte do cinema adiante para o maior número de pessoas possível.
+                    </p>
+                </div>
+            </div>
+
+            <div class="topico">
+                <h2>A missão da empresa</h2>
+                <button class="botao-detalhes" type="button">Detalhes</button>
+                <div class="resposta">
+                    <p class="texto-resposta">
+                        Nossa missão se baseia em espalhar a sétima arte para o maior número de pessoas possível,
+                        fazendo tudo ao nosso alcance para que possamos alcançar nosso objetivo da maneira mais
+                        agradável para os nossos clientes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="topico">
+                <h2>Nossos valores</h2>
+                <button class="botao-detalhes" type="button">Detalhes</button>
+                <div class="resposta">
+                    <p class="texto-resposta">
+                        Nossos principais valores são:
+                        <ul class="lista-valores">
+                            <li>Persistência</li>
+                            <li>Resiliência</li>
+                            <li>Honestidade</li>
+                            <li>Transparência</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <div class="coluna">
+                <h3>Institucional</h3>
+                <ul>
+                    <li>Quem somos</li>
+                    <li>Sobre a empresa</li>
+                    <li>Faça parte da empresa</li>
+                </ul>
+            </div>
+
+            <div class="coluna">
+                <h3>Políticas</h3>
+                <ul>
+                    <li>Privacidade e Segurança</li>
+                    <li>Meia-Entrada</li>
+                    <li>Cancelamentos e Trocas</li>
+                    <li>Termos de Uso</li>
+                </ul>
+            </div>
+
+            <div class="coluna">
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li><img src="{{ url_for('static', filename='img/insta.png') }}" alt="Instagram">Instagram</li>
+                    <li><img src="{{ url_for('static', filename='img/youtube.png') }}" alt="YouTube">Youtube</li>
+                    <li><img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook">Facebook</li>
+                </ul>
+            </div>
+
+            <div class="coluna">
+                <h3>Precisa de ajuda?</h3>
+                <ul>
+                    <li>Atendimento</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

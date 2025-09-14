@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resenhas.css') }}">
+    <title>Resenhas</title>
+
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li>
+                <div class="nav-item">
+                    <img src="{{ url_for('static', filename='img/Luvi Ingressos.png') }}" class="logo">
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <img src="{{ url_for('static', filename='img/ingresso (1).png') }}">
+                    <a href="ingressos"><span>Ingressos</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <img src="{{ url_for('static', filename='img/cinema.png') }}">
+                    <a href="cinemas"><span>Cinemas</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    <img src="{{ url_for('static', filename='img/jornal.png') }}">
+                    <a href="noticias"><span>Notícias</span></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="search-container">
+                    <input type="text" placeholder="Digite aqui...">
+                    <button type="submit">Pesquisar</button>
+                </div>
+            </li>
+
+            <li>
+                <div class="nav-item">
+                    {% if logado and usuario %}
+                        <span class="welcome-text">Olá, <strong>{{ usuario }}</strong>!</span>
+                        <a href="/logout"><span>Sair</span></a>
+                    {% else %}
+                        <a href="{{ url_for('validar_login') }}"><span>Login</span></a>
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="em-cartaz">
+        <h1>Escolha um filme para resenhar</h1>
+        
+        <div class="setaesquerda">
+            <img src="{{ url_for('static', filename='img/seta2.png') }}">
+        </div>
+
+        <div class="filme1">
+            <img src="{{ url_for('static', filename='img/filme1.jpg') }}"><br>
+            <h3>A Hora do Mal</h3>
+        </div>
+
+        <div class="filme2">
+            <img src="{{ url_for('static', filename='img/filme2.webp') }}"><br>
+            <h3>Uma Sexta-Feira Mais Louca Ainda</h3>
+        </div>
+
+        <div class="filme3">
+            <img src="{{ url_for('static', filename='img/filme3.webp') }}"><br>
+            <h3>Amores Materialistas</h3>
+        </div>
+
+        <div class="filme4">
+            <img src="{{ url_for('static', filename='img/filme4.jpeg') }}"><br>
+            <h3>Juntos</h3>
+        </div>
+
+        <div class="filme5">
+            <img src="{{ url_for('static', filename='img/filme5.jpg') }}"><br>
+            <h3>Os Caras Malvados 2</h3>
+        </div>
+
+        <div class="setadireita">
+            <img src="{{ url_for('static', filename='img/seta1.png') }}">
+        </div>
+    </div>
+
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+        {% if mensagens %}
+            <div class="mensagens">
+                {% for categoria, msg in mensagens %}
+                    <p class="{{ categoria }}">{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    {% if not logado %}
+        <div class="login-prompt">
+            <h2>Faça login para escrever uma resenha</h2>
+            <p>Você precisa estar logado para compartilhar sua opinião sobre os filmes.</p>
+            <a href="{{ url_for('validar_login') }}" class="btn-login">Fazer Login</a>
+        </div>
+    {% endif %}
+
+    {% if logado %}
+        <form method="POST" class="formulario">
+            <input type="text" name="filme" placeholder="Nome do filme" value="{{ request.args.get('filme', '') }}">
+            <input type="text" name="usuario" placeholder="Seu nome" value="{{ usuario }}">
+            <textarea name="conteudo" placeholder="Escreva sua resenha..."></textarea>
+            <button type="submit">Enviar Resenha</button>
+        </form>
+    {% endif %}
+
+    <div class="lista">
+        {% if resenhas %}
+            {% for r in resenhas %}
+                <div class="card">
+                    <h2>{{ r.filme }}</h2>
+                    <p><strong>{{ r.usuario }}</strong> disse:</p>
+                    <p>{{ r.conteudo }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="vazio">Nenhuma resenha ainda... Seja o primeiro a escrever.</p>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        <footer>
+            <div class="coluna1">
+                <h3>Institucional</h3>
+                <ul>
+                    <li>Quem somos</li>
+                    <li>Sobre a empresa</li>
+                    <li>Faça parte da empresa</li>
+                </ul>
+            </div>
+
+            <div class="coluna2">
+                <h3>Políticas</h3>
+                <ul>
+                    <li>Privacidade e Segurança</li>
+                    <li>Meia-Entrada</li>
+                    <li>Cancelamentos e Trocas</li>
+                    <li>Termos de Uso</li>
+                </ul>
+            </div>
+
+            <div class="coluna3">
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li><img src="{{ url_for('static', filename='img/insta.png') }}">Instagram</li>
+                    <li><img src="{{ url_for('static', filename='img/youtube.png') }}">Youtube</li>
+                    <li><img src="{{ url_for('static', filename='img/facebook.png') }}">Facebook</li>
+                </ul>
+            </div>
+
+            <div class="coluna4">
+                <h3>Precisa de ajuda?</h3>
+                <ul>
+                    <li>Atendimento</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

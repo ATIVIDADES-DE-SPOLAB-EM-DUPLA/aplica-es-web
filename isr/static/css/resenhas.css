@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #d9d9d9;
+  width: 100%;
+  height: auto;
+  padding-top: 90px;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Container principal */
+.principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Mensagens flash */
+.mensagens {
+  margin: 20px 0;
+}
+
+.mensagens p {
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.mensagens .sucesso {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #2e7d32;
+}
+
+.mensagens .erro {
+  background-color: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #c62828;
+}
+
+/* Formulário */
+.formulario {
+  background-color: #3e5363;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #a8dadc;
+}
+
+.formulario textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.formulario button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #c1121f;
+}
+
+/* Lista de resenhas */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+/* Cards de resenhas */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  color: #1d3557;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 24px;
+  border-bottom: 2px solid #a8dadc;
+  padding-bottom: 10px;
+}
+
+.card p {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.card p strong {
+  color: #e63946;
+}
+
+/* Mensagem quando não há resenhas */
+.vazio {
+  text-align: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  color: #666;
+  font-style: italic;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título da seção */
+.titulo-secao {
+  text-align: center;
+  color: #1d3557;
+  font-size: 32px;
+  margin: 40px 0 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.titulo-secao:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #e63946;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .principal {
+    padding: 15px;
+  }
+  
+  .formulario {
+    padding: 20px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  .titulo-secao {
+    font-size: 28px;
+  }
+}
+
+.em-cartaz{
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 0;
+    font-family: "Outfit", sans-serif;
+}
+
+.em-cartaz h1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.em-cartaz > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 190px;
+}
+
+.em-cartaz img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.em-cartaz .setaesquerda,
+.em-cartaz .setadireita{
+    width: 50px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.em-cartaz .setaesquerda img .setadireita img {
+    width: 100%;
+    height: auto;
+}
+
+.filme-card {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .filme-card:hover {
+            transform: scale(1.05);
+        }
+        
+.formulario {
+    margin: 30px auto;
+      max-width: 600px;
+    padding: 20px;
+     background-color: #f8f9fa;
+     border-radius: 8px;
+        }
+        
+        .formulario input, 
+        .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .formulario button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .vazio {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .mensagens {
+            margin: 20px 0;
+        }
+        
+        .mensagens p {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .sucesso {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-left: 4px solid #2e7d32;
+        }
+        
+        .erro {
+            background-color: #ffebee;
+            color: #c62828;
+            border-left: 4px solid #c62828;
+        }
+        
+        .login-prompt {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .btn-login {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+nav{
+    background-color: black;
+    width: 100%;
+    height: 90px;
+    color: white;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    padding: 5px;
+    gap: 5px;
+    z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+nav li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.nav .logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav img:not(.logo) {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+nav input[type=text] {
+  width: 170px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: auto;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+nav button {
+  display: inline-flex;
+  border-radius: 4px;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 110px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+nav button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+nav button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+nav button:hover span {
+  padding-right: 25px;
+}
+
+nav button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.welcome-text {
+  color: white;
+  margin-right: 15px;
+}
+
+.footer {
+  margin-top: 50px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  font-family: "Outfit", sans-serif;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  list-style-type: none;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+footer img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}

@@ -1,28 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 
 app = Flask(__name__)
-
-app.secret_key = 'ChaveSupersecreta'
+app.secret_key = "omaein_compra_boobiesgoddies"
 
 users = [
-    {'email': 'levi@gmail.com', 'password': '123', 'name': 'levi'}
+    {"name": "Levi", "email": "levi@gmail.com", "password": "123"}
 ]
 
 @app.route('/')
 def pagina_inicial():
-    return render_template('index.html', logado=session.get('logado', False), usuario=session.get('user_name', None))
-
-@app.route('/ingressos')
-def ingressos():
-    return render_template('ingressos.html', logado=session.get('logado', False), usuario=session.get('user_name', None))
-
-@app.route('/cinemas')
-def cinemas():
-    return render_template('cinemas.html', logado=session.get('logado', False), usuario=session.get('user_name', None))
-
-@app.route('/noticias')
-def noticias():
-    return render_template('noticias.html', logado=session.get('logado', False), usuario=session.get('user_name', None))
+    return redirect(url_for('pagina_resenhas'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def validar_login():
@@ -37,7 +24,7 @@ def validar_login():
                 session['user_email'] = useremail
                 session['user_name'] = user['name']
                 flash("Login realizado com sucesso!", "sucesso")
-                return redirect(url_for('pagina_inicial'))
+                return redirect(url_for('pagina_resenhas'))
         
         return render_template('login.html', erro="Username, email ou senha incorretos")
 
@@ -70,8 +57,35 @@ def cadastro():
 def logout():
     session.clear()
     flash("Você foi desconectado com sucesso!", "sucesso")
-    return redirect(url_for('pagina_inicial'))
+    return redirect(url_for('pagina_resenhas'))
 
+@app.route("/resenhas", methods=["GET", "POST"])
+def pagina_resenhas():
+    if "resenhas" not in session:
+        session["resenhas"] = []
 
-if __name__ == '__main__':
+    if request.method == "POST":
+        if not session.get('logado'):
+            flash("Você precisa estar logado para postar uma resenha!", "erro")
+            return redirect(url_for('validar_login'))
+            
+        filme = request.form.get("filme")
+        usuario = request.form.get("usuario")
+        conteudo = request.form.get("conteudo")
+
+        if not filme or not usuario or not conteudo:
+            flash("Preencha todos os campos antes de enviar!", "erro")
+        else:
+            nova_resenha = {"filme": filme, "usuario": usuario, "conteudo": conteudo}
+            session["resenhas"].append(nova_resenha)
+            session.modified = True
+            flash("Resenha adicionada com sucesso!", "sucesso")
+            return redirect(url_for("pagina_resenhas"))
+
+    logado = session.get('logado', False)
+    usuario = session.get('user_name')
+    
+    return render_template("resenhas.html", resenhas=session["resenhas"], usuario=usuario, logado=logado)
+
+if __name__ == "__main__":
     app.run(debug=True)
